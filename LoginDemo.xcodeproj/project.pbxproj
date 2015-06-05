@@ -13,6 +13,7 @@
 		CD895E5D1B2059B900921BD2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD895E5C1B2059B900921BD2 /* Images.xcassets */; };
 		CD895E601B2059B900921BD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD895E5E1B2059B900921BD2 /* LaunchScreen.xib */; };
 		CD895E6C1B2059BA00921BD2 /* LoginDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD895E6B1B2059B900921BD2 /* LoginDemoTests.swift */; };
+		CD895E811B21D66900921BD2 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD895E801B21D66900921BD2 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,8 @@
 		CD895E651B2059B900921BD2 /* LoginDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD895E6A1B2059B900921BD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD895E6B1B2059B900921BD2 /* LoginDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDemoTests.swift; sourceTree = "<group>"; };
+		CD895E7D1B205F1700921BD2 /* LoginDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoginDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		CD895E801B21D66900921BD2 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD895E811B21D66900921BD2 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 		CD895E471B2059B900921BD2 = {
 			isa = PBXGroup;
 			children = (
+				CD895E801B21D66900921BD2 /* FacebookSDK.framework */,
 				CD895E521B2059B900921BD2 /* LoginDemo */,
 				CD895E681B2059B900921BD2 /* LoginDemoTests */,
 				CD895E511B2059B900921BD2 /* Products */,
@@ -83,6 +88,7 @@
 				CD895E5C1B2059B900921BD2 /* Images.xcassets */,
 				CD895E5E1B2059B900921BD2 /* LaunchScreen.xib */,
 				CD895E531B2059B900921BD2 /* Supporting Files */,
+				CD895E7D1B205F1700921BD2 /* LoginDemo-Bridging-Header.h */,
 			);
 			path = LoginDemo;
 			sourceTree = "<group>";
@@ -340,9 +346,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LoginDemo",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoginDemo/LoginDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +364,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LoginDemo",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoginDemo/LoginDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
